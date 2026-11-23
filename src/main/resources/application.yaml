@@ -1,0 +1,29 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: Auth-Service
+  datasource:
+    url: jdbc:postgresql://localhost:5433/flagship
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate   # validate | update | create | create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+
+  sql:
+    init:
+      mode: never
+
+logging:
+  level:
+    org.springframework.security: DEBUG
